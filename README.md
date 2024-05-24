@@ -42,3 +42,40 @@ php artisan schedule:list
 php artisan app:custom-task
 "# laraveltraining.day2" 
 "# laraveltraining.day2" 
+
+
+queue
+---------
+QUEUE_CONNECTION=redis
+QUEUE_CONNECTION=database
+QUEUE_CONNECTION=sync
+
+
+php artisan make:job SendEmailJob
+
+php artisan queue:work //for queue worker
+
+php artisan queue:listen //for queue listener
+
+php artisan queue:work --queue=emails --tries=3
+
+composer require laravel/horizon
+
+Authentication
+-------------------
+php artisan migrate
+php artisan make: auth //old command
+
+
+create database command
+-------------------
+CREATE DATABASE laravel_app;
+
+composer require laravel/ui
+php artisan ui bootstrap 
+php artisan ui bootstrap --auth
+
+php artisan make:controller AuthenController
+
+php artisan make:middleware AlreadyLoggedIn
+php artisan make:middleware AuthCheck
