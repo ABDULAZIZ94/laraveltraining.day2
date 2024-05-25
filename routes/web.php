@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthenController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\WeatherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,6 @@ Route::controller(AuthenController::class)->group(function () {
     Route::get('/dashboard', 'dashboard')->middleware('isLoggedIn');
     Route::get('/logout', 'logout');
 });
+
+Route::get('/weather', [WeatherController::class, 'getWeather']);
+

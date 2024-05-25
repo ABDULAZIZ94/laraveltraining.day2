@@ -79,3 +79,20 @@ php artisan make:controller AuthenController
 
 php artisan make:middleware AlreadyLoggedIn
 php artisan make:middleware AuthCheck
+
+
+add guzzle http client
+----------------------
+composer require guzzlehttp/guzzle
+
+create simple api
+--------------------------
+php artisan make:model Books -m // this also ato create migration file
+php artisan migrate
+php artisan make:controller BooksController
+
+C:\laragon\www\laraveltraining.day2>php artisan migrate:status
+
+database seeder
+--------------------------------
+php artisan make:seeder BooksSeeder
